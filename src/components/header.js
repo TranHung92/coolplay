@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as actions from '../actions';
-import {dashboard} from '../constants/pathnames';
+import { dashboard, browse } from '../constants/pathnames';
 
 function Login({ onLogin }) {
 	return (

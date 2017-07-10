@@ -8,9 +8,11 @@ const initialState = {
 export default function(state = initialState, action) {
 	switch (action.type) {
 		case actions.SET_USER:
-			return setUser(state, action.session);
+			return setUser(state, action.user);
 		case actions.SET_SESSION:
-			return setSession(state, action.user);
+			return setSession(state, action.session);
+		case actions.RESET_SESSION:
+			return initialState
 		default:
 			return state;
 	}
