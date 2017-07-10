@@ -4,18 +4,15 @@ import * as actions from '../../actions';
 import { TrackPreview } from './preview';
 
 
-function mapStateToProps(state, props) {
-  const { idx, activity } = props;
+function mapStateToProps(state) {
 
   return {
-    idx,
-    activity,
+
     typeReposts: state.user.typeReposts,
     typeTracks: state.user.typeTracks,
     userEntities: state.entities.users,
     isPlaying: state.player.isPlaying,
     activeTrackId: state.player.activeTrackId,
-    activeSortType: state.sort.sortType,
     activeDurationFilterType: state.filter.durationFilterType,
   };
 }

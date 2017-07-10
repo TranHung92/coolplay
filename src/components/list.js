@@ -37,8 +37,6 @@ function SpecificList({ ids, kind, entities, onPlay }) {
 	// 		</div>
 	// 	)
 	// }
-
-	const handleClick = (track) => console.log(track)
 	
 	let favoriteList = _.values(entities)
 	const renderTracks = favoriteList.map(track => 

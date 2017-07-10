@@ -36,3 +36,10 @@ export function mergeFavorites(favorites) {
 		favorites
 	}
 }
+
+function receiveAccessToken(accessToken) {
+  return {
+    type: actionTypes.RECEIVE_ACCESS_TOKEN,
+    accessToken
+  }
+} 

@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as actions from '../actions';
-import { dashboard, browse } from '../constants/pathnames';
+import { likePage, browse } from '../constants/pathnames';
 
 function Login({ onLogin }) {
 	return (
-		<Link onClick={onLogin} to={dashboard}>
+		<Link onClick={onLogin} to={likePage}>
 			Login
 		</Link>
 	)
