@@ -2859,6 +2859,10 @@ react-router@^4.1.1:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
+react-soundcloud-player@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-soundcloud-player/-/react-soundcloud-player-1.0.1.tgz#91cf2c08646583bc43d55174f4e312800965f544"
+
 react@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"

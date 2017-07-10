@@ -6,6 +6,7 @@ import paginate from './paginate';
 import toggle from './toggle';
 import entities from './entities';
 import user from './user';
+import track from './track'
 
 
 export default combineReducers({
@@ -15,5 +16,6 @@ export default combineReducers({
   paginate,
   toggle,
   entities,
-  user
+  user,
+  track
 });

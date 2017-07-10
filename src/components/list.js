@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import _ from 'lodash'
 import { TrackPreviewContainer } from '../components/track';
 import _map from '../services/map'
+import Player from 'react-soundcloud-player'
+
+
 // import { UserPreviewContainer } from '../components/User';
 
 function SpecificItemTrack({ entities, trackId }) {
@@ -21,7 +24,7 @@ function SpecificItemTrack({ entities, trackId }) {
 // }
 
 
-function SpecificList({ ids, kind, entities }) {
+function SpecificList({ ids, kind, entities, onPlay }) {
 	// if (kind === 'USER') {
 	// 	return (
 	// 		<div>
@@ -34,49 +37,66 @@ function SpecificList({ ids, kind, entities }) {
 	// 		</div>
 	// 	)
 	// }
+
+	const handleClick = (track) => console.log(track)
 	
 	let favoriteList = _.values(entities)
 	const renderTracks = favoriteList.map(track => 
 		<div key={track.id}>
 			<li>{track.title}</li>
-			<button>play</button>
+			<button type='button' onClick={() => onPlay(track)}>play</button>
 		</div>
 	)
-	
-	let tracksID = _.values(ids)
-
 
 	if (kind === 'TRACK') {
 		return (
 			<div>
 				<ul>
-					
+					{renderTracks}
 				</ul>
 			</div>
 		)
 	}
 }
 
-function List({
-	ids,
-	isExpanded,
-	title,
-	kind,
-	requestInProcess,
-	entities,
-	onToggleMore,
-	nextHref,
-	onFetchMore
-}) {
+
+
+class List extends Component {
+	constructor() {
+		super()
+		this.state = { activeTrack: null }
+	}
+	render() {
+		const {
+			ids,
+			isExpanded,
+			title,
+			kind,
+			requestInProcess,
+			entities,
+			onToggleMore,
+			nextHref,
+			onFetchMore,
+			activeTrack,
+			onPlay
+		} = this.props;
 	return (
 		<div>
 			<SpecificList
 				ids={ids}
 				kind={kind}
 				entities={entities}
+				activeTrack={activeTrack}
+				onPlay={onPlay}
 			/>
+			{
+				activeTrack ?
+					<Player audio_id={activeTrack.id.toString()} title={activeTrack.title} /> :
+					null
+			}
 		</div>
 	)
+	}
 }
 
 export default List

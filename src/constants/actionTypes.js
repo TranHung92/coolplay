@@ -47,3 +47,6 @@ export const FILTER_NAME = 'FILTER_NAME';
 export const SORT_STREAM = 'SORT_STREAM';
 
 export const SET_SELECTED_GENRE = 'SET_SELECTED_GENRE';
+
+export const TRACKS_SET = 'TRACKS_SET'
+export const TRACK_PLAY = 'TRACK_PLAY'
