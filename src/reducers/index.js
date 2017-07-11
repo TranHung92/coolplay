@@ -5,8 +5,10 @@ import request from './request';
 import entities from './entities';
 import user from './user';
 import track from './track'
-import tracks from './tracks'
 
+import { tracksReducer } from '../core/tracks'
+import { usersReducer } from '../core/users'
+//import tracksReducer from './tracks'
 
 
 export default combineReducers({
@@ -16,6 +18,7 @@ export default combineReducers({
   entities,
   user,
   track,
-  tracks,
+  tracks: tracksReducer,
+  users: usersReducer,
 
 });
