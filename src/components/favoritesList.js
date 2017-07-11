@@ -54,14 +54,12 @@ class FavoritesList extends Component {
 }
 
 function mapStateToProps(state) {
-	const nextHref = state.paginate[paginateLinkTypes.FAVORITES];
 	const requestInProcess = state.request[requestTypes.FAVORITES];
 	const { tracks, activeTrack } = state.track;
 	return {
 		currentUser: state.auth.user,
 		trackEntities: state.entities.tracks,
 		favorites: state.user.favorites,
-		nextHref,
 		requestInProcess,
 		tracks,
 		activeTrack
