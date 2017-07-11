@@ -7,10 +7,3 @@ export function mergeEntities(entities) {
   };
 }
 
-export function syncEntities(entity, key) {
-  return {
-    type: actionTypes.SYNC_ENTITIES,
-    entity,
-    key
-  };
-}

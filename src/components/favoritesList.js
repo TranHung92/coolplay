@@ -43,7 +43,7 @@ class FavoritesList extends Component {
 				nextHref={nextHref}
 				requestInProcess={requestInProcess}
 				currentUser={currentUser}
-				onFetchMore={() => onFetchFavorites(currentUser, nextHref)}
+				// onFetchMore={() => onFetchFavorites(currentUser, nextHref)}
 				kind="TRACK"
 				tracks={tracks}
 				activeTrack={activeTrack}

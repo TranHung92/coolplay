@@ -23,7 +23,9 @@ export const fetchFavorites = (user, nextHref) => (dispatch, getState) => {
     .then(response => response.json())
     .then(data => {
       const normalized = normalize(data.collection, arrayOf(trackSchema));
-      dispatch(mergeEntities(normalized.entities));
+      // dispatch(mergeEntities(normalized.entities));
+      dispatch(setUserEntities(normalized.entities.users))
+      dispatch(setTrackEntities(normalized.entities.tracks))
       dispatch(mergeFavorites(normalized.result));
       dispatch(setPaginateLink(data.next_href, paginateLinkTypes.FAVORITES));
       dispatch(setRequestInProcess(false, requestType));
@@ -37,10 +39,33 @@ export function mergeFavorites(favorites) {
 	}
 }
 
-function receiveAccessToken(accessToken) {
+export function setUserEntities(users) {
   return {
-    type: actionTypes.RECEIVE_ACCESS_TOKEN,
-    accessToken
+    type: actionTypes.SET_USER_ENTITIES,
+    users
   }
-} 
+}
 
+export function setTrackEntities(tracks) {
+  return {
+    type: actionTypes.SET_TRACK_ENTITIES,
+    tracks
+  }
+}
+
+export const fetchStream = () => (dispatch, getState) => {
+  const requestType = requestTypes.STREAM;
+  const tempAccessToken = '1-136957-134910968-0a68625b07f20'
+  const url = `https://api.soundcloud.com/me/activities?limit=10&oauth_token=${tempAccessToken}`
+  const requestInProcess = getState().request[requestType];
+  if (requestInProcess) { return; }
+
+  dispatch(setRequestInProcess(true, requestType));
+  return fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const normalized = normalize(data.collection, arrayOf(trackSchema));
+      dispatch(mergeEntities(normalized.entities));
+      dispatch(setRequestInProcess(false, requestType));
+    })
+}

@@ -1,5 +1,5 @@
 import { login, logout, resetSession } from './auth';
-import { fetchFavorites } from './user';
+import { fetchFavorites, fetchStream } from './user';
 import { playTrack } from './track'
 
 
@@ -8,5 +8,6 @@ export {
 	logout,
 	resetSession,
 	fetchFavorites,
+	fetchStream,
 	playTrack
 };

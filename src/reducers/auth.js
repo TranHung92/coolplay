@@ -3,7 +3,6 @@ import * as actions from '../constants/actionTypes';
 const initialState = {
 	session: null,
 	user: null,
-	accessToken: null
 };
 
 export default function(state = initialState, action) {
@@ -14,8 +13,6 @@ export default function(state = initialState, action) {
 			return setSession(state, action);
 		case actions.RESET_SESSION:
 			return initialState
-		case actions.RECEIVE_ACCESS_TOKEN:
-			return receiveAccessToken(state, action);
 		default:
 			return state;
 	}
@@ -29,9 +26,4 @@ function setUser(state, action) {
 function setSession(state, action) {
 	const { session } = action;
 	return { ...state, session };
-}
-
-function receiveAccessToken(state, action) {
-	const { accessToken } = action;
-	return { ...state, accessToken };
 }
