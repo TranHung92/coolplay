@@ -3,7 +3,6 @@ import auth from './auth';
 import player from './player';
 import request from './request';
 import paginate from './paginate';
-import toggle from './toggle';
 import entities from './entities';
 import user from './user';
 import track from './track'
@@ -14,7 +13,6 @@ export default combineReducers({
   player,
   request,
   paginate,
-  toggle,
   entities,
   user,
   track

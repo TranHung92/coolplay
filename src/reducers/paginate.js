@@ -13,5 +13,5 @@ export default function(state = initialState, action) {
 function setPaginateLink(state, nextHref, paginateType) {
   const paginateObject = {};
   paginateObject[paginateType] = nextHref;
-  return Object.assign({}, state, paginateObject);
+  return { ...state, paginateObject };
 }

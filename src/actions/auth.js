@@ -13,16 +13,8 @@ export const login = () => (dispatch) => {
 		Cookies.set(OAUTH_TOKEN, session.oauth_token);
 		dispatch(setSession(session));
 		dispatch(fetchUser());
-		dispatch(receiveAccessToken(session.oauth_token));
 	})
   /* eslint-enable no-undef */	
-}
-
-function receiveAccessToken(accessToken) {
-  return {
-    type: actions.RECEIVE_ACCESS_TOKEN,
-    accessToken
-  }
 } 
 
 export const logout = () => (dispatch) => {

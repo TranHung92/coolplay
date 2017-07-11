@@ -67,12 +67,10 @@ class List extends Component {
 	render() {
 		const {
 			ids,
-			isExpanded,
 			title,
 			kind,
 			requestInProcess,
 			entities,
-			onToggleMore,
 			nextHref,
 			onFetchMore,
 			activeTrack,

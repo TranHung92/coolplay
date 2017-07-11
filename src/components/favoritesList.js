@@ -30,8 +30,6 @@ class FavoritesList extends Component {
 			trackEntities,
 			nextHref,
 			requestInProcess,
-			isExpanded,
-			onSetToggle,
 			onFetchFavorites,
 			tracks,
 			activeTrack,
@@ -44,9 +42,7 @@ class FavoritesList extends Component {
 				entities={trackEntities}
 				nextHref={nextHref}
 				requestInProcess={requestInProcess}
-				isExpanded={isExpanded}
 				currentUser={currentUser}
-				onToggleMore={() => onSetToggle(toggleTypes.FAVORITES)}
 				onFetchMore={() => onFetchFavorites(currentUser, nextHref)}
 				kind="TRACK"
 				tracks={tracks}
@@ -60,7 +56,6 @@ class FavoritesList extends Component {
 function mapStateToProps(state) {
 	const nextHref = state.paginate[paginateLinkTypes.FAVORITES];
 	const requestInProcess = state.request[requestTypes.FAVORITES];
-	const isExpanded = state.toggle[toggleTypes.FAVORITES];
 	const { tracks, activeTrack } = state.track;
 	return {
 		currentUser: state.auth.user,
@@ -68,7 +63,6 @@ function mapStateToProps(state) {
 		favorites: state.user.favorites,
 		nextHref,
 		requestInProcess,
-		isExpanded,
 		tracks,
 		activeTrack
 	}
@@ -76,7 +70,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-		onSetToggle: bindActionCreators(actions.setToggle, dispatch),
 		onFetchFavorites: bindActionCreators(actions.fetchFavorites, dispatch),
 		onPlay: bindActionCreators(actions.playTrack, dispatch)
 	}

@@ -14,5 +14,5 @@ function setRequestInProcess(state, action) {
   const { inProcess, requestType } = action;
   const requestObject = {};
   requestObject[requestType] = inProcess;
-  return Object.assign({}, state, requestObject);
+  return { ...state, requestObject };
 }
