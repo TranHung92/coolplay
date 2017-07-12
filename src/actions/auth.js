@@ -2,7 +2,6 @@ import Cookies from 'js-cookie';
 import { CLIENT_ID, REDIRECT_URI, OAUTH_TOKEN } from '../constants/auth';
 import * as actions from '../constants/actionTypes';
 import { apiUrl } from '../services/api';
-import { fetchFavorites, fetchStream } from '../actions/user'
 
 export const login = () => (dispatch) => {
 	const client_id = CLIENT_ID;
@@ -27,7 +26,6 @@ const fetchUser = () => (dispatch) => {
 		.then(response => response.json())
 		.then(me => {
 			dispatch(setUser(me));
-			dispatch(fetchFavorites(me));
 		});
 }
 

@@ -41,7 +41,7 @@ function Header({ currentUser, selectedGenre, onLogin, onLogout }) {
 
 function mapStateToProps(state) {
 	return {
-		currentUser: state.auth.user
+		//currentUser: state.auth.user
 	}
 }
 

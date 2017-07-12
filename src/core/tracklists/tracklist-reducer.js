@@ -9,6 +9,7 @@ export function tracklistReducer(state = new Tracklist(), { type, payload }) {
 				tracklist
 					.merge({
 						isNew: false,
+						isLoaded: true,
 						isPending: false,
 						nextUrl: payload.next_href || null,
 						trackIds: mergeTrackIds(tracklist.trackIds, payload.data)
@@ -16,6 +17,7 @@ export function tracklistReducer(state = new Tracklist(), { type, payload }) {
 			})
 		case actionTypes.LOAD_FEATURED_TRACKS:
 			return state.set('id', payload.tracklistId)
+
 
 		default:
 			return state

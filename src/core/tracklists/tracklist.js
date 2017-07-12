@@ -8,6 +8,7 @@ export const Tracklist = new Record({
   id: null,
   isNew: true,
   isPending: false,
+  isLoaded: false,
   nextUrl: null,
   pageCount: 0,
   trackIds: new List()
