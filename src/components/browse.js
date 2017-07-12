@@ -5,9 +5,11 @@ import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
 import List from '../components/list';
 
+import { FEATURED_TRACKLIST_ID } from '../core/constants'
+
 class Browse extends Component {
 	componentDidMount() {
-		this.props.fetchTracks();
+		this.props.fetchTracks(FEATURED_TRACKLIST_ID);
 	}
 
 	render() {
@@ -18,6 +20,8 @@ class Browse extends Component {
 		)
 	}
 }
+
+
 
 function mapDispatchToProps(dispatch) {
 	return {

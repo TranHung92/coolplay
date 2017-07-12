@@ -16,7 +16,7 @@ export const tracklistActions = {
 // 		payload: request
 // 	}
 // }
-export function fetchTracksFulfilled() {
+export function fetchTracksFulfilled(tracklistId) {
 	return dispatch => {
 		axios.get('https://api.soundcloud.com/users/185676792/favorites?client_id=d02c42795f3bcac39f84eee0ae384b00&')
 			.then(res => {
@@ -29,9 +29,8 @@ export function fetchTracksFulfilled() {
 				})
 				dispatch({
 					type: tracklistActions.FETCH_TRACKS_FULFILLED,
-					payload: res
-				})
-				
+					payload: { ...res, tracklistId }
+				})		
 			})
 	}
 }
