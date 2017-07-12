@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import { tracklistActions } from '../../actions/tracklists';
+import * as actionTypes from '../../_constants/actionTypes';
 import { createUser } from './user';
 
 
@@ -10,7 +10,7 @@ export const initialState = new Map({
 
 export function usersReducer(state = initialState, {payload, type}) {
   switch (type) {
-    case tracklistActions.FETCH_TRACKS_FULFILLED:
+    case actionTypes.FETCH_TRACKS_FULFILLED:
       return state.withMutations(users => {
         payload.data.forEach(trackData => {
           if (!users.has(trackData.user.id)) {

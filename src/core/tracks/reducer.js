@@ -1,11 +1,11 @@
 import { Map } from 'immutable';
-import { tracklistActions } from '../../actions/tracklists';
+import * as actionTypes from '../../_constants/actionTypes';
 import { createTrack } from './track';
 
 
 export function tracksReducer(state = new Map(), action) {
   switch (action.type) {
-    case tracklistActions.FETCH_TRACKS_FULFILLED:
+    case actionTypes.FETCH_TRACKS_FULFILLED:
       return state.withMutations(tracks => {
         action.payload.data.forEach(trackData => {
           tracks.set(trackData.id, createTrack(trackData));

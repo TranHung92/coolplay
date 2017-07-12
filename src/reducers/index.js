@@ -8,8 +8,7 @@ import track from './track'
 
 import { tracksReducer } from '../core/tracks'
 import { usersReducer } from '../core/users'
-//import tracksReducer from './tracks'
-
+import { tracklistsReducer } from '../core/tracklists'
 
 export default combineReducers({
   auth,
@@ -20,5 +19,6 @@ export default combineReducers({
   track,
   tracks: tracksReducer,
   users: usersReducer,
+  tracklists: tracklistsReducer,
 
 });
