@@ -1,4 +1,4 @@
-export { authReducer } from './reducers'
+export { authReducer } from './reducer'
 
 export {
 	login, 

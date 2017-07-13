@@ -26,8 +26,13 @@ function Logout({ onLogout }) {
 
 function SessionAction({ currentUser, onLogin, onLogout }) {
 	return (
-		<div>
-			{ currentUser ? <Logout onLogout={onLogout} /> : <Login onLogin={onLogin} />}
+		<div className="ui menu">
+			<div className="item">
+				<Link to={browse}>mySoundCloud</Link>
+			</div>
+			<div className="right menu item">
+				{ currentUser ? <Logout onLogout={onLogout} /> : <Login onLogin={onLogin} />}
+			</div>
 		</div>
 	)
 }

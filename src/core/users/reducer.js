@@ -23,6 +23,8 @@ export function usersReducer(state = initialState, {payload, type}) {
       return state
         .withMutations(users => users.set(payload.id, createUser(payload)))
         .set('authedUserId', payload.id)
+    case actionTypes.LOAD_USER:
+      return state.set('currentUserId', payload.userId)    
     default:
       return state;
   }

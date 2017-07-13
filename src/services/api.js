@@ -47,3 +47,7 @@ export function getLazyLoadingCommentsUrl(nextHref, initHref) {
     return apiUrl(initHref, '&');
   }
 }
+
+export function userUrl(userId, section) {
+  return `/users/${userId}/${section}`
+}

@@ -1,54 +1,59 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect';
+import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux'
 
 import { getTrackById } from '../core/tracks'
-import { getTracksForCurrentTracklist, getCurrentTracklist, getCurrentTrackIds } from '../core/tracklists'
+import { getTracksForCurrentTracklist, getCurrentTracklist } from '../core/tracklists'
 import { getTracks } from '../core/tracks'
+import TrackCard from './trackCard'
+import { playerActions } from '../core/player'
 
-function List({ tracks }) {
+
+function List({ tracks, playTrack, tracklistId }) {
 	const renderList = tracks.map(track => 
 		<div key={track.id}>
-			<li>{track.title}</li>
+			<div className="three wide column">
+				<TrackCard track={track} play={playTrack.bind(null, track.id, tracklistId)} />
+			</div>
 		</div>
 	)
 	return (
-		<div>
-			<ul>
-				{renderList}
-			</ul>
+		<div className="ui centered grid">
+			{renderList}
 		</div>
 	)
 }
 
 class Tracklist extends Component {
 	render() {
-		const { tracks, ids } = this.props
-		if (ids) console.log('hello', ids)
-		// let lists = tracklists.toJS()
-		// let ids = lists.featured
+		const { tracklist, tracks, playTrack } = this.props
+		console.log('hello', this.props.playTrack)
 		return (
 			<div>
-				<h3>featured tracks</h3>
-				<ul>
-					{ids ? <List tracks={ids} /> : <h3>loading</h3>}	
-				</ul>
+				<h3>{tracklist.id} tracks</h3>
+				{tracks ? <List tracks={tracks} playTrack={playTrack} tracklistId={tracklist.id} /> : <h3>loading</h3>}	
 			</div>
 		)
 	}
 }
 
-// function mapStateToProps(state) {
-// 	return {
-// 		tracklists: state.get('tracklists'), 
-// 		tracks: state.get('tracks')
-// 	}
-// }
 
 const mapStateToProps = createSelector(
+	getCurrentTracklist,
 	getTracksForCurrentTracklist,
-	getTracks,
-	(ids, tracks) => ({ ids, tracks })
+	(tracklist, tracks) => ({ tracklist, tracks })
 );
 
-export default connect(mapStateToProps)(Tracklist)
+// const mapDispatchToProps = {
+// 	playTrack: playerActions.playSelectedTrack
+// }
+
+function mapDispatchToProps(dispatch) {
+	return {
+		playTrack: bindActionCreators(playerActions.playSelectedTrack, dispatch),
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Tracklist)

@@ -18,3 +18,8 @@ export const getAuthedUser = createSelector(
   getUsers,
   users => users.get(users.get('authedUserId'))
 );
+
+export const getCurrentUser = createSelector(
+	getUsers,
+	users => users.get(users.get('currentUserId'))
+)

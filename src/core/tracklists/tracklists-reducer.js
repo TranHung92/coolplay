@@ -18,10 +18,12 @@ export function tracklistsReducer(state = initialState, action) {
 				tracklistReducer(state.get(payload.tracklistId), action)
 			)
 		case actionTypes.LOAD_FEATURED_TRACKS:
+		case actionTypes.LOAD_USER_LIKES:
 			return state.merge({
 				currentTracklistId: payload.tracklistId,
 				[payload.tracklistId]: tracklistReducer(state.get(payload.tracklistId), action)
 			})
+
 		default:
 			return state
 	}

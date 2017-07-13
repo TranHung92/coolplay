@@ -5,3 +5,16 @@ export const LOAD_FEATURED_TRACKS = 'LOAD_FEATURED_TRACKS'
 export const SET_USER = 'SET_USER'
 export const SET_ME = 'SET_ME'
 export const SET_SESSION = 'SET_SESSION'
+
+export const LOAD_USER = 'LOAD_USER'
+export const LOAD_USER_LIKES = 'LOAD_USER_LIKES'
+export const LOAD_USER_TRACKS = 'LOAD_USER_TRACKS'
+
+
+// player 
+export const AUDIO_ENDED = 'AUDIO_ENDED'
+export const AUDIO_PAUSED = 'AUDIO_PAUSED'
+export const AUDIO_PLAYING = 'AUDIO_PLAYING'
+export const AUDIO_TIME_UPDATED = 'AUDIO_TIME_UPDATED'
+export const AUDIO_VOLUME_CHANGED = 'AUDIO_VOLUME_CHANGED'
+export const PLAY_SELECTED_TRACK = 'PLAY_SELECTED_TRACK'

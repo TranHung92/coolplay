@@ -9,5 +9,6 @@ export {
 } from './selectors';
 
 export {
-	fetchTracksFulfilled
+	fetchTracksFulfilled,
+	fetchLikes
 } from './actions'
