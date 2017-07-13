@@ -38,6 +38,8 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "react-soundcloud-player": "^1.0.1",
+    "react-sticky": "^6.0.1",
+    "react-sticky-el": "^1.0.10",
     "redux": "^3.7.1",
     "redux-immutable": "^4.0.0",
     "redux-logger": "^3.0.6",

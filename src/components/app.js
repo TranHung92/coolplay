@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom'
+import { StickyContainer, Sticky } from 'react-sticky';
 
 import Callback from './callback'
 import Browse from './browse'
@@ -18,7 +19,7 @@ export default class App extends Component {
 	render() {
 		return (
 			<div className="ui container">
-				<Header />
+
 				<Switch>
 					<Route exact path={`${browse}`} component={Browse} />
 					<Route exact path={likePage} component={LikePage} />
