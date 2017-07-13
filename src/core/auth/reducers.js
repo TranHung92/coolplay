@@ -1,11 +1,11 @@
-import * as actions from '../constants/actionTypes';
+import * as actions from '../../constants/actionTypes';
 
 const initialState = {
 	session: null,
 	user: null,
 };
 
-export default function(state = initialState, action) {
+export function authReducer(state = initialState, action) {
 	switch (action.type) {
 		case actions.SET_USER:
 			return setUser(state, action);

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actions from '../actions'
+import * as tracklistActions from '../core/tracklists'
 import Tracklist from './tracklist';
 
 import { FEATURED_TRACKLIST_ID } from '../core/constants'
@@ -27,7 +27,7 @@ class Browse extends Component {
 
 function mapDispatchToProps(dispatch) {
 	return {
-		fetchTracks: bindActionCreators(actions.fetchTracksFulfilled, dispatch),
+		fetchTracks: bindActionCreators(tracklistActions.fetchTracksFulfilled, dispatch),
 	}
 }
 

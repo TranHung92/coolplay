@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import * as actions from '../actions';
+import * as authActions from '../core/auth';
 import { likePage, browse } from '../constants/pathnames';
 
 function Login({ onLogin }) {
@@ -30,7 +30,8 @@ function SessionAction({ currentUser, onLogin, onLogout }) {
 	)
 }
 
-function Header({ currentUser, selectedGenre, onLogin, onLogout }) {
+function Header({ currentUser, onLogin, onLogout }) {
+	console.log('hello',currentUser)
 	return (
 		<div className='header'>
 			<SessionAction currentUser={currentUser} onLogin={onLogin} onLogout={onLogout} />
@@ -41,14 +42,14 @@ function Header({ currentUser, selectedGenre, onLogin, onLogout }) {
 
 function mapStateToProps(state) {
 	return {
-		//currentUser: state.auth.user
+		currentUser: state.auth
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
-		onLogin: bindActionCreators(actions.login, dispatch),
-		onLogout: bindActionCreators(actions.logout, dispatch)
+		onLogin: bindActionCreators(authActions.login, dispatch),
+		onLogout: bindActionCreators(authActions.logout, dispatch)
 	}
 }
 

@@ -3,7 +3,7 @@ import SC from 'soundcloud';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import configureStore from './stores/configureStore';
+import configureStore from './core/store';
 
 import App from './components/app';
 

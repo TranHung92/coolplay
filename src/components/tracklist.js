@@ -26,7 +26,6 @@ class Tracklist extends Component {
 		
 		let lists = tracklists.toJS()
 		let ids = lists.featured
-		//tracklists.map(tracklist => console.log(tracklist.get('featured')))
 		return (
 			<div>
 				<ul>

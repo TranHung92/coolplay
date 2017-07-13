@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
-import { CLIENT_ID, REDIRECT_URI, OAUTH_TOKEN } from '../constants/auth';
-import * as actions from '../constants/actionTypes';
-import { apiUrl } from '../services/api';
+import { CLIENT_ID, REDIRECT_URI, OAUTH_TOKEN } from '../../constants/auth';
+import * as actions from '../../constants/actionTypes';
+import { apiUrl } from '../../services/api';
 
 export const login = () => (dispatch) => {
 	const client_id = CLIENT_ID;
