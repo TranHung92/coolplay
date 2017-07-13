@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux-immutable';
+import { combineReducers } from 'redux';
 
 import { authReducer } from './auth';
 import { tracksReducer } from './tracks'
@@ -10,5 +10,4 @@ export default combineReducers({
   tracks: tracksReducer,
   users: usersReducer,
   tracklists: tracklistsReducer,
-
 });

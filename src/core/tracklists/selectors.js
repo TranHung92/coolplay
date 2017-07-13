@@ -49,12 +49,10 @@ export const getCurrentTrackIds = createSelector(
 );
 
 export const getTracksForCurrentTracklist = createSelector(
-  getCurrentPage,
   getCurrentTrackIds,
   getTracks,
-  (currentPage, trackIds, tracks) => {
+  ( trackIds, tracks) => {
     return trackIds
-      .slice(0, currentPage * TRACKS_PER_PAGE)
       .map(id => tracks.get(id));
   }
 );

@@ -1,16 +1,15 @@
-import * as actions from '../../constants/actionTypes';
+import { Map } from 'immutable'
 
-const initialState = {
+import * as actions from '../../_constants/actionTypes';
+
+const initialState = new Map({
 	session: null,
-	user: null,
-};
+});
 
 export function authReducer(state = initialState, action) {
 	switch (action.type) {
-		case actions.SET_USER:
-			return setUser(state, action);
 		case actions.SET_SESSION:
-			return setSession(state, action);
+			return state.set('session', action.payload);
 		case actions.RESET_SESSION:
 			return initialState
 		default:
@@ -18,10 +17,6 @@ export function authReducer(state = initialState, action) {
 	}
 }
 
-function setUser(state, action) {
-	const { user } = action;
-	return { ...state, user };
-}
 
 function setSession(state, action) {
 	const { session } = action;

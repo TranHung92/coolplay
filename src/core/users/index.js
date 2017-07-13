@@ -1,3 +1,3 @@
 export { createUser, User } from './user';
 export { usersReducer } from './reducer';
-export { getUsers, getUserById, getCurrentUser } from './selectors';
+export { getUsers, getUserById, getAuthedUser } from './selectors';

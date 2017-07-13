@@ -1,3 +1,7 @@
 export const FETCH_TRACKS_FULFILLED = 'FETCH_TRACKS_FULFILLED'
 
 export const LOAD_FEATURED_TRACKS = 'LOAD_FEATURED_TRACKS'
+
+export const SET_USER = 'SET_USER'
+export const SET_ME = 'SET_ME'
+export const SET_SESSION = 'SET_SESSION'

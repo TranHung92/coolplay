@@ -1,8 +1,12 @@
 export { tracklistsReducer } from './tracklists-reducer'
 
 export {
-	getTracksForCurrentTracklist
-} from './selectors'
+  getCurrentTracklist,
+  getTracklistById,
+  getTracklistCursor,
+  getTracksForCurrentTracklist,
+  getCurrentTrackIds
+} from './selectors';
 
 export {
 	fetchTracksFulfilled

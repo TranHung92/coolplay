@@ -14,7 +14,7 @@ export function getUserById(state, userId) {
 //  MEMOIZED SELECTORS
 //-------------------------------------
 
-export const getCurrentUser = createSelector(
+export const getAuthedUser = createSelector(
   getUsers,
-  users => users.get(users.get('currentUserId'))
+  users => users.get(users.get('authedUserId'))
 );

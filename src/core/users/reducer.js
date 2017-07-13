@@ -4,7 +4,8 @@ import { createUser } from './user';
 
 
 export const initialState = new Map({
-  currentUserId: null
+  currentUserId: null,
+  authedUserId: null,
 });
 
 
@@ -18,6 +19,10 @@ export function usersReducer(state = initialState, {payload, type}) {
           }
         });
       });
+    case actionTypes.SET_ME:
+      return state
+        .withMutations(users => users.set(payload.id, createUser(payload)))
+        .set('authedUserId', payload.id)
     default:
       return state;
   }
