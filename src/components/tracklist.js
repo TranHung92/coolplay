@@ -15,7 +15,7 @@ function List({ tracks, playTrack, tracklistId }) {
 	const renderList = tracks.map(track => 
 		<div key={track.id}>
 			<div className="three wide column">
-				<TrackCard track={track} play={playTrack.bind(null, track.id, tracklistId)} />
+				<TrackCard track={track} play={playTrack.bind(null, track, tracklistId)} />
 			</div>
 		</div>
 	)

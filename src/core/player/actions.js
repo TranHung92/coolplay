@@ -1,11 +1,20 @@
 import * as actionTypes from '../../_constants/actionTypes'
 
+import { getPlayerTrack, getPlayerTracklistCursor } from './selectors';
+import { audio } from './audio-service';
+
 export const playerActions = {
-	playSelectedTrack: (trackId, tracklistId) => ({
-		type: actionTypes.PLAY_SELECTED_TRACK,
-		payload: {
-			trackId,
-			tracklistId
-		}
-	})
+	playSelectedTrack: (track, tracklistId) => dispatch => {
+		audio.load(track.streamUrl)
+		audio.play()
+		dispatch({
+			type: actionTypes.PLAY_SELECTED_TRACK,
+			payload: {
+				track,
+				tracklistId
+			}
+		})
+	}
+
+	
 }
