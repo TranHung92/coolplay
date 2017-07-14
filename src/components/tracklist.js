@@ -30,7 +30,7 @@ class Tracklist extends Component {
 		const { tracklist, tracks, playTrack } = this.props
 		return (
 			<div>
-				<h3>{tracklist.id} tracks</h3>
+				<h3>{tracklist.id} trackssssss</h3>
 				{tracks ? <List tracks={tracks} playTrack={playTrack} tracklistId={tracklist.id} /> : <h3>loading</h3>}	
 			</div>
 		)
