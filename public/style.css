@@ -1,3 +1,8 @@
-.header {
+.header.menu {
 	z-index: 1;
+	background-color: black;
+}
+
+.description {
+	height: 38px;
 }

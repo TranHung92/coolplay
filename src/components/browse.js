@@ -19,39 +19,29 @@ class Browse extends Component {
 
 	render() {
 		return (
-			<StickyContainer >
-				<div>
-					<Sticky>
-						{
-	            ({
-	              style,
-
-	              // the following are also available but unused in this example
-	              isSticky,
-	              wasSticky,
-	              distanceFromTop,
-	              distanceFromBottom,
-	              calculatedHeight
-	            }) => {
-	              return (
-	                <div className="header" style={style}>
-	                	<div>
-											<Header  />
-	                	</div>
-	                </div>
-	              )
-	            }
-          	}
-					</Sticky>
-					<h3>This is browse</h3>
-					<div>
-						<div className="tracklist" style={{ zIndex: 0 }}>
-							<Tracklist />
-						</div>
+			<div>
+				<div className="ui very padded vertical segment">
+					<div className="ui container">
+						<div className="ui secondary pointing massive menu">
+    					<a className="item active">
+      					Tracks
+    					</a>
+    					<a className="item">
+      					Likes
+    					</a>
+    					<a className="item">
+      					Playlist
+    					</a>
+  					</div>
 					</div>
-				</div>				
-			</StickyContainer>
+				</div>
 
+				<div className="ui container">
+					<div className="tracklist">
+						<Tracklist />
+					</div>
+				</div>
+			</div>	
 		)
 	}
 }

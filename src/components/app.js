@@ -18,16 +18,41 @@ import Header from './header'
 export default class App extends Component {
 	render() {
 		return (
-			<div className="ui container">
-
-				<Switch>
-					<Route exact path={`${browse}`} component={Browse} />
-					<Route exact path={likePage} component={LikePage} />
-					<Route exact path='/users/:id/:section' component={UserPage} />
-					<Route exact path={callback} component={Callback} />
-					<Redirect to={`${browse}`} />	
-				</Switch>
+			<div style={{ height: 1500 }}>
+			<StickyContainer>
+				<div>
+					<Sticky>
+						{
+	            ({
+	              style,
+	              isSticky,
+	              wasSticky,
+	              distanceFromTop,
+	              distanceFromBottom,
+	              calculatedHeight
+	            }) => {
+	              return (
+	                <div className="header menu" style={style}>
+	                	<div>
+											<Header  />
+	                	</div>
+	                </div>
+	              )
+	            }
+          	}
+					</Sticky>
+					<Switch>
+						<Route exact path={browse} component={Browse} />
+						<Route exact path={likePage} component={LikePage} />
+						<Route path='/users/:id/:section' component={UserPage} />
+						<Route exact path={callback} component={Callback} />
+						<Redirect to={`${browse}`} />	
+					</Switch>
+				</div>				
+			</StickyContainer>				
 			</div>
+
+
 		)
 	}
 }
