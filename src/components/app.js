@@ -10,6 +10,7 @@ import {
 	likePage, 
 	callback 
 } from '../constants/pathnames';
+import Footer from './footer'
 import Header from './header'
 
 export default class App extends Component {
@@ -38,6 +39,7 @@ export default class App extends Component {
 	            }
           	}
 					</Sticky>
+					<Footer />
 					<Switch>
 						<Route exact path='/' component={HomePage} />
 						<Route exact path={likePage} component={LikePage} />

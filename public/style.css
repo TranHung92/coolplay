@@ -7,3 +7,30 @@
 .description {
 	height: 38px;
 }
+
+.footer {
+	background-color: green!important;
+}
+
+/*footer*/
+.bs-scrolling-header{
+  position:fixed;
+  background: orange ;
+  height:100px;
+  width:100%;
+  transition:  all .3s ease-in-out;
+  bottom:0px;
+  z-index: 1;
+ 
+}
+
+.small{
+  height: 50px;
+  background:blue;
+}
+
+.small * {
+    font-size: small;
+    color: beige;
+}
+/*footer*/
