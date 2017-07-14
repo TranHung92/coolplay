@@ -28,9 +28,9 @@ function List({ tracks, playTrack, tracklistId }) {
 class Tracklist extends Component {
 	render() {
 		const { tracklist, tracks, playTrack } = this.props
+		console.log('tracklist', tracklist.id)
 		return (
 			<div>
-				<h3>{tracklist.id} trackssssss</h3>
 				{tracks ? <List tracks={tracks} playTrack={playTrack} tracklistId={tracklist.id} /> : <h3>loading</h3>}	
 			</div>
 		)

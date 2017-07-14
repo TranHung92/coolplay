@@ -9,7 +9,7 @@ export {
 } from './selectors';
 
 export {
-	fetchTracksFulfilled,
+	fetchFeaturedTracks,
 	fetchFavorites,
 	fetchUserTracks
 } from './actions'

@@ -18,8 +18,7 @@ class HomePage extends Component {
 }
 
 	componentWillMount() {
-		this.props.fetchTracks(FEATURED_TRACKLIST_ID);
-		this.props.fetchUserTracks()
+		this.props.fetchFeaturedTracks(FEATURED_TRACKLIST_ID);
 	}
 
 	render() {
@@ -40,7 +39,7 @@ class HomePage extends Component {
 
 function mapDispatchToProps(dispatch) {
 	return {
-		fetchTracks: bindActionCreators(tracklistActions.fetchTracksFulfilled, dispatch),
+		fetchFeaturedTracks: bindActionCreators(tracklistActions.fetchFeaturedTracks, dispatch),
 		fetchUserTracks: bindActionCreators(tracklistActions.fetchUserTracks, dispatch)
 	}
 }

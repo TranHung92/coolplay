@@ -1,33 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function UserCard({user}) {
-	function RenderCard({user}) {
+	function RenderUserCard({user}) {
 		return (
 			<div className="ui very padded vertical segment">
 				<div className="ui container">
-					<h2 className="ui header">
-	  				<img src={user.avatarUrl} className="ui circular image" />
+					<h1 className="ui header">
+	  				<img src={user.avatarUrl} alt="" className="ui circular image" />
 	  				{user.username}
-					</h2>
+					</h1>
 					<div className="ui secondary pointing massive menu">
-						<Link activeClassName="active" to={`/users/${user.id}/tracks`} className="item">
+						<NavLink activeClassName="active" to={`/users/${user.id}/tracks`} className="item">
 	  					Tracks
-						</Link>
-						<Link activeClassName="active" to={`/users/${user.id}/favorites`} className="item">
+						</NavLink>
+						<NavLink activeClassName="active" to={`/users/${user.id}/favorites`} className="item">
 	  					Favorites
-						</Link>
-						<Link activeClassName="active" to='' className="item">
-	  					Playlist
-						</Link>
+						</NavLink>
 					</div>
 				</div>
 			</div>			
 		)
 	}
+	function RenderHomeCard() {
+		return (
+			<div className="ui very padded vertical segment">
+				<div className="ui container">
+					<h3>Featured Tracks</h3>
+				</div>
+			</div>
+		)
+	}
+
 	return (
 		<div>
-			{ user ? <RenderCard user={user} /> : null }
+			{ user ? <RenderUserCard user={user} /> : <RenderHomeCard /> }
 		</div>
 	)
 }

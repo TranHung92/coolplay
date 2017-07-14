@@ -19,6 +19,12 @@ export function usersReducer(state = initialState, {payload, type}) {
           }
         });
       });
+    case actionTypes.FETCH_USER:
+      return state.withMutations(users => {
+        if (!users.has(payload.id)) {
+          users.set(payload.id, createUser(payload))
+        }
+      })
     case actionTypes.SET_ME:
       return state
         .withMutations(users => users.set(payload.id, createUser(payload)))

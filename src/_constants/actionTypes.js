@@ -7,7 +7,7 @@ export const SET_ME = 'SET_ME'
 export const SET_SESSION = 'SET_SESSION'
 export const RESET_SESSION = 'RESET_SESSION'
 
-
+export const FETCH_USER = 'FETCH_USER'
 export const LOAD_USER = 'LOAD_USER'
 export const LOAD_USER_FAVORITES = 'LOAD_USER_FAVORITES'
 export const LOAD_USER_TRACKS = 'LOAD_USER_TRACKS'
