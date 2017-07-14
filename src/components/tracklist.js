@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 
 //import { getTracks } from '../core/tracks'
 //import { getTrackById } from '../core/tracks'
-import { getTracksForCurrentTracklist, getCurrentTracklist } from '../core/tracklists'
+import { getTracksForCurrentTracklist, getCurrentTracklist, getTracklistLoaded } from '../core/tracklists'
 import TrackCard from './trackCard'
 import { playerActions } from '../core/player'
 
@@ -27,11 +27,11 @@ function List({ tracks, playTrack, tracklistId }) {
 
 class Tracklist extends Component {
 	render() {
-		const { tracklist, tracks, playTrack } = this.props
-		console.log('tracklist', tracklist.id)
+		const { tracklist, tracks, isLoaded, playTrack } = this.props
+		console.log('isLoaded', isLoaded)
 		return (
 			<div>
-				{tracks ? <List tracks={tracks} playTrack={playTrack} tracklistId={tracklist.id} /> : <h3>loading</h3>}	
+				{isLoaded ? <List tracks={tracks} playTrack={playTrack} tracklistId={tracklist.id} /> : <h3>loading</h3>}	
 			</div>
 		)
 	}
@@ -41,7 +41,8 @@ class Tracklist extends Component {
 const mapStateToProps = createSelector(
 	getCurrentTracklist,
 	getTracksForCurrentTracklist,
-	(tracklist, tracks) => ({ tracklist, tracks })
+	getTracklistLoaded,
+	(tracklist, tracks, isLoaded) => ({ tracklist, tracks, isLoaded })
 );
 
 const mapDispatchToProps = {

@@ -5,7 +5,8 @@ export {
   getTracklistById,
   getTracklistCursor,
   getTracksForCurrentTracklist,
-  getCurrentTrackIds
+  getCurrentTrackIds,
+  getTracklistLoaded
 } from './selectors';
 
 export {
