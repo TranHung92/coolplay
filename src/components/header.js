@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 
 import { getAuthedUser } from '../core/users';
 import * as authActions from '../core/auth';
-import { likePage, browse } from '../constants/pathnames';
+import { likePage } from '../constants/pathnames';
 
 function Login({ onLogin }) {
 	return (
@@ -18,7 +18,7 @@ function Login({ onLogin }) {
 
 function Logout({ onLogout }) {
   return (
-    <Link onClick={onLogout} to={browse}>
+    <Link onClick={onLogout} to='/'>
       Logout
     </Link>
   );
@@ -29,7 +29,7 @@ function SessionAction({ currentUser, onLogin, onLogout }) {
 		<div className="ui massive inverted menu">
 			<div className="ui container">
 				<div className="item">
-					<Link to={browse}>mySoundCloud</Link>
+					<Link to='/'>mySoundCloud</Link>
 				</div>
 				<div className="right menu item">
 					{ currentUser ? <Logout onLogout={onLogout} /> : <Login onLogin={onLogin} />}

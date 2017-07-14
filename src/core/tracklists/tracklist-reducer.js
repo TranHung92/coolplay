@@ -16,7 +16,8 @@ export function tracklistReducer(state = new Tracklist(), { type, payload }) {
 					})
 			})
 		case actionTypes.LOAD_FEATURED_TRACKS:
-		case actionTypes.LOAD_USER_LIKES:
+		case actionTypes.LOAD_USER_FAVORITES:
+		case actionTypes.LOAD_USER_TRACKS:
 			return state.set('id', payload.tracklistId)
 
 		default:

@@ -7,3 +7,5 @@ export {
 	getCurrentUser 
 } from './selectors';
 export { userActions } from './actions'
+
+export { tracklistIdForUserFavorites, tracklistIdForUserTracks } from './utils'

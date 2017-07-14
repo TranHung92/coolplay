@@ -10,5 +10,6 @@ export {
 
 export {
 	fetchTracksFulfilled,
-	fetchLikes
+	fetchFavorites,
+	fetchUserTracks
 } from './actions'

@@ -9,7 +9,7 @@ export const RESET_SESSION = 'RESET_SESSION'
 
 
 export const LOAD_USER = 'LOAD_USER'
-export const LOAD_USER_LIKES = 'LOAD_USER_LIKES'
+export const LOAD_USER_FAVORITES = 'LOAD_USER_FAVORITES'
 export const LOAD_USER_TRACKS = 'LOAD_USER_TRACKS'
 
 

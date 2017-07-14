@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import axios from 'axios'
+//import axios from 'axios'
 
 import { CLIENT_ID, REDIRECT_URI, OAUTH_TOKEN } from '../../constants/auth';
 import * as actions from '../../_constants/actionTypes';

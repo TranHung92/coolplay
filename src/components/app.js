@@ -3,14 +3,11 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import { StickyContainer, Sticky } from 'react-sticky';
 
 import Callback from './callback'
-import Browse from './browse'
+import HomePage from './pages/homePage'
 import LikePage from './likePage'
-import UserPage from './userPage'
+import UserPage from './pages/userPage'
 import { 
-	browse, 
 	likePage, 
-	playlistsPage,
-	streamPage, 
 	callback 
 } from '../constants/pathnames';
 import Header from './header'
@@ -18,7 +15,7 @@ import Header from './header'
 export default class App extends Component {
 	render() {
 		return (
-			<div style={{ height: 1500 }}>
+			<div>
 			<StickyContainer>
 				<div>
 					<Sticky>
@@ -42,11 +39,11 @@ export default class App extends Component {
           	}
 					</Sticky>
 					<Switch>
-						<Route exact path={browse} component={Browse} />
+						<Route exact path='/' component={HomePage} />
 						<Route exact path={likePage} component={LikePage} />
-						<Route path='/users/:id/:section' component={UserPage} />
+						<Route exact path='/users/:id/:section' component={UserPage} />
 						<Route exact path={callback} component={Callback} />
-						<Redirect to={`${browse}`} />	
+						<Redirect to='/' />	
 					</Switch>
 				</div>				
 			</StickyContainer>				

@@ -23,22 +23,17 @@ export function createUser(data, profile = false) {
     avatarUrl: data.avatar_url,
     id: data.id,
     permalinkUrl: data.permalink_url,
-    username: data.username
+    username: data.username,
+    city: data.city,
+    country: data.country,
+    followersCount: data.followers_count,
+    followingsCount: data.followings_count,
+    fullName: data.full_name,
+    likesCount: data.public_favorites_count,
+    playlistCount: data.playlist_count,
+    profile: true,
+    trackCount: data.track_count
   };
-
-  if (profile) {
-    attrs = Object.assign(attrs, {
-      city: data.city,
-      country: data.country,
-      followersCount: data.followers_count,
-      followingsCount: data.followings_count,
-      fullName: data.full_name,
-      likesCount: data.public_favorites_count,
-      playlistCount: data.playlist_count,
-      profile: true,
-      trackCount: data.track_count
-    });
-  }
 
   return new User(attrs);
 }

@@ -21,7 +21,20 @@ export function fetchTracksFulfilled(tracklistId) {
 	}
 }
 
-export function fetchLikes(tracklistId, userId) {
+export function fetchUserTracks(userId, section) {
+	const tracklistId = `users/${userId}/${section}`
+	return dispatch => {
+		axios.get(`https://api.soundcloud.com/users/${userId}/${section}?client_id=a281614d7f34dc30b665dfcaa3ed7505&`)
+			.then(res => {
+				dispatch({
+					type: actionTypes.FETCH_TRACKS_FULFILLED,
+					payload: { ...res, tracklistId}
+				})
+			})
+	}
+}
+
+export function fetchFavorites(tracklistId, userId) {
 	return dispatch => {
 		axios.get(`https://api.soundcloud.com/users/${userId}/favorites?client_id=a281614d7f34dc30b665dfcaa3ed7505&`)
 			.then(res => {

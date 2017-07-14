@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect';
-import { Link } from 'react-router-dom';
-import { bindActionCreators } from 'redux'
+//import { Link } from 'react-router-dom';
 
-import { getTrackById } from '../core/tracks'
+//import { getTracks } from '../core/tracks'
+//import { getTrackById } from '../core/tracks'
 import { getTracksForCurrentTracklist, getCurrentTracklist } from '../core/tracklists'
-import { getTracks } from '../core/tracks'
 import TrackCard from './trackCard'
 import { playerActions } from '../core/player'
 
@@ -29,7 +28,6 @@ function List({ tracks, playTrack, tracklistId }) {
 class Tracklist extends Component {
 	render() {
 		const { tracklist, tracks, playTrack } = this.props
-		console.log('hello', this.props.playTrack)
 		return (
 			<div>
 				<h3>{tracklist.id} tracks</h3>
@@ -46,14 +44,8 @@ const mapStateToProps = createSelector(
 	(tracklist, tracks) => ({ tracklist, tracks })
 );
 
-// const mapDispatchToProps = {
-// 	playTrack: playerActions.playSelectedTrack
-// }
-
-function mapDispatchToProps(dispatch) {
-	return {
-		playTrack: bindActionCreators(playerActions.playSelectedTrack, dispatch),
-	}
+const mapDispatchToProps = {
+	playTrack: playerActions.playSelectedTrack
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tracklist)

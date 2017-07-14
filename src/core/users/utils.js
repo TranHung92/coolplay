@@ -1,5 +1,5 @@
-export function tracklistIdForUserLikes(userId) {
-  return `users/${userId}/likes`;
+export function tracklistIdForUserFavorites(userId) {
+  return `users/${userId}/favorites`;
 }
 
 export function tracklistIdForUserTracks(userId) {

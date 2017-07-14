@@ -1,5 +1,5 @@
 import { PLAYER_MAX_VOLUME, PLAYER_VOLUME_INCREMENT } from '../constants';
-import { playerActions } from './actions';
+//import { playerActions } from './actions';
 
 
 let _audio = new Audio();

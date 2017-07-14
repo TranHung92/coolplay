@@ -1,16 +1,16 @@
 import * as actionTypes from '../../_constants/actionTypes'
-import { tracklistIdForUserLikes, tracklistIdForUserTracks } from './utils';
+import { tracklistIdForUserFavorites, tracklistIdForUserTracks } from './utils';
 
 export const userActions = {
 	loadUser: userId => ({
 		type: actionTypes.LOAD_USER,
-		payload: { userId }
+		payload: { userId: parseInt(userId, 10) }
 	}),
 
-	loadUserLikes: userId => ({
-		type: actionTypes.LOAD_USER_LIKES,
+	loadUserFavorites: userId => ({
+		type: actionTypes.LOAD_USER_FAVORITES,
 		payload: {
-			tracklistId: tracklistIdForUserLikes(userId),
+			tracklistId: tracklistIdForUserFavorites(userId),
 			userId
 		}
 	}),
@@ -22,5 +22,9 @@ export const userActions = {
 			userId
 		}
 	}),
+
+
  
 }
+
+

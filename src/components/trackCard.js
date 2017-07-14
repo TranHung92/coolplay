@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Card, Icon, Image } from 'semantic-ui-react'
 
 import { userUrl } from '../services/api'
 
@@ -8,11 +7,11 @@ const TrackCard = ({track, play}) => (
   <div className="four wide column">
     <div className="ui centered card">
       <div className="image">
-        <img src={track.artworkUrl} />
+        <img src={track.artworkUrl} alt=""/>
       </div>
       <div className="content">
         <div className="header">
-          <Link to={userUrl(track.userId, 'likes')}>{track.username}</Link>
+          <Link to={userUrl(track.userId, 'tracks')}>{track.username}</Link>
         </div>
         <div className="description">
           {track.title}

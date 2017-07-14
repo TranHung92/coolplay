@@ -17,8 +17,3 @@ export function authReducer(state = initialState, action) {
 	}
 }
 
-
-function setSession(state, action) {
-	const { session } = action;
-	return { ...state, session };
-}
