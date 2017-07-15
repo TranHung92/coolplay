@@ -19,7 +19,7 @@ class UserPage extends Component {
 		}
 	}
 
-	componentDidMount() {
+	componentWillMount() {
   	if (this.scrolled === false){
     	window.scrollTo(0,0);
     	this.scrolled = true;
@@ -29,19 +29,27 @@ class UserPage extends Component {
 		this.loadCurrentUser()
 	}
 
-	componentWillMount() {
+	// componentWillMount() {
 
-	}
+	// }
 
 	componentWillUpdate(nextProps) {
 		if (nextProps.match.params !== this.props.match.params) {
-			console.log('favoritesLoaded', this.state.favoritesLoaded)
-			console.log('tracksLoaded', this.state.tracksLoaded)
+			// console.log('currentUserId', this.props.currentUser.id)
+			// console.log('props', nextProps.match.params.id)
 			this.loadCurrentUser(nextProps.match.params)
 			if (this.state.tracksLoaded !== this.state.favoritesLoaded) {
 				this.props.fetchUserTracks(nextProps.match.params.id, nextProps.match.params.section)
 			} else {
-				this.props.reloadPlaylist(`users/${nextProps.match.params.id}/${nextProps.match.params.section}`)
+				if (this.props.currentUser.id == nextProps.match.params.id) {
+					this.props.reloadPlaylist(`users/${nextProps.match.params.id}/${nextProps.match.params.section}`)
+				} else {
+  				this.props.fetchCurrentUser(nextProps.match.params.id)
+					this.props.fetchUserTracks(nextProps.match.params.id, nextProps.match.params.section)
+					this.setState({ tracksLoaded: false })
+					console.log('tracksLoaded', this.state.tracksLoaded)
+					console.log('favoritesLoaded', this.state.favoritesLoaded)
+				}
 			}
 		}
 	}

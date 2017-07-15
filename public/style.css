@@ -27,7 +27,7 @@
 
 .small{
   height: 50px;
-  background:blue;
+  background: #1b1c1d;
 }
 
 .small * {
@@ -126,4 +126,10 @@
     -webkit-transform: scale(1.5, 1.5);
     opacity: 0;
   }
+}
+
+/*active item*/
+.ui.secondary.pointing.menu .active.item:hover {
+	color: #f2711c;
+	border-color: #f2711c;
 }
