@@ -8,23 +8,25 @@ import { getAuthedUser, getCurrentUser, userActions } from '../../core/users'
 import Tracklist from '../tracklist'
 import * as tracklistActions from '../../core/tracklists'
 import UserCard from '../userCard'
+import { getTracklistStatus, getCurrentTracklist } from '../../core/tracklists'
 
 class UserPage extends Component {
-	componentDidUpdate() {
-  if(this.scrolled === false){
-    window.scrollTo(0,0);
-    this.scrolled = true;
-  }
-}
-
-	componentWillMount() {
-		this.props.fetchCurrentUser(this.props.match.params.id)
+	componentDidMount() {
+  	if (this.scrolled === false){
+    	window.scrollTo(0,0);
+    	this.scrolled = true;
+  	}
+  	this.props.fetchCurrentUser(this.props.match.params.id)
 		this.props.fetchUserTracks(this.props.match.params.id, this.props.match.params.section)
 		this.loadCurrentUser()
-		console.log('props',this.props)
+	}
+
+	componentWillMount() {
+
 	}
 
 	componentWillUpdate(nextProps) {
+		console.log('currentTracklist', this.props.currentTracklist.id)
 		if (nextProps.match.params !== this.props.match.params) {
 			this.loadCurrentUser(nextProps.match.params)
 			this.props.fetchUserTracks(nextProps.match.params.id, nextProps.match.params.section)
@@ -42,7 +44,7 @@ class UserPage extends Component {
 	}
 
 	render() {
-		const { currentUser, authedUser } = this.props
+		const { currentUser, authedUser, currentTracklist, isLoaded } = this.props
 		if (!currentUser) return null;
 		return (
 			<div>
@@ -59,7 +61,9 @@ class UserPage extends Component {
 const mapStateToProps = createSelector(
 	getAuthedUser,
 	getCurrentUser,
-	(authedUser, currentUser) => ({authedUser, currentUser})
+	getTracklistStatus,
+	getCurrentTracklist,
+	(authedUser, currentUser, isLoaded, currentTracklist) => ({authedUser, currentUser, isLoaded, currentTracklist})
 )
 
 function mapDispatchToProps(dispatch) {
@@ -69,6 +73,7 @@ function mapDispatchToProps(dispatch) {
 		loadUserTracks: bindActionCreators(userActions.loadUserTracks, dispatch),
 		fetchCurrentUser: bindActionCreators(userActions.fetchCurrentUser, dispatch),
 		fetchUserTracks: bindActionCreators(tracklistActions.fetchUserTracks, dispatch),
+		reloadPlaylist: bindActionCreators(tracklistActions.reloadPlaylist, dispatch)
 	}
 }
 export default connect(mapStateToProps, mapDispatchToProps)(UserPage)

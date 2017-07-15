@@ -28,7 +28,11 @@ export function tracklistsReducer(state = initialState, action) {
 				tracklistLoaded: false,
 				[payload.tracklistId]: tracklistReducer(state.get(payload.tracklistId), action)
 			})
-
+		case actionTypes.RELOAD_PLAYLIST:
+			return state.merge({
+				currentTracklistId: payload.tracklistId,
+				tracklistLoaded: true
+			})
 		default:
 			return state
 	}

@@ -29,7 +29,6 @@ export function fetchUserTracks(userId, section) {
 
 function loadUserTracks(userId, section) {
 	if (section === 'tracks') {
-		console.log('hellllo tracks')
 		return {
 			type: actionTypes.LOAD_USER_TRACKS,
 			payload: {
@@ -55,11 +54,10 @@ export function fetchTracks(tracklistId, data) {
 	}
 }
 
-export function fetchTracks2(data) {
-	console.log("dataaa", data[17092364])
+export function reloadPlaylist(tracklistId) {
 	return {
-		type: null,
-		payload: null
+		type: actionTypes.RELOAD_PLAYLIST,
+		payload: { tracklistId }
 	}
 }
 

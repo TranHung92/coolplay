@@ -16,5 +16,5 @@ export {
 	fetchFavorites,
 	fetchUserTracks,
 	fetchTracks,
-	fetchTracks2
+	reloadPlaylist
 } from './actions'

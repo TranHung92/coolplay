@@ -14,6 +14,9 @@ import Footer from './footer'
 import Header from './header'
 
 export default class App extends Component {
+	componentDidMount() {
+    window.scrollTo(0,0);
+	}
 	render() {
 		return (
 			<div>
