@@ -1,65 +1,8 @@
-.header.menu {
-  position:fixed;
-  width:100%;
-  top:0px;
-  z-index: 1;
-}
-
-.description {
-	height: 38px;
-}
-
-.userCard {
-	margin-top: 80px;
-}
-
-
-/*footer*/
-.bs-scrolling-header{
-  position:fixed;
-  background: orange ;
-  height:100px;
-  width:100%;
-  transition:  all .3s ease-in-out;
-  bottom:0px;
-  z-index: 1;
-}
-
-.small{
-  height: 50px;
-  background:blue;
-}
-
-.small * {
-    font-size: small;
-    color: beige;
-}
-/*footer*/
-
-
 /* Spinner Wave */
-.col-sm-2 {
-  padding: 10px;
-  border-radius: 4px;
-  height: 125px;
-  margin-bottom: 10px;
-}
-
-.sp {
-  width: 32px;
-  height: 32px;
-  clear: both;
-  margin: 20px auto;
-}
-
-
 .sp-wave {
   border-radius: 50%;
   position: relative;
   opacity: 1;
-  height: 70px;
-  width: 70px;
-  margin-top: 100px;
 }
 
 .sp-wave:before, .sp-wave:after {
@@ -70,7 +13,6 @@
   height: 100%;
   position: absolute;
   left: 0px;
-  background-color: orange;
 }
 
 .sp-wave:before {

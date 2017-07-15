@@ -19,7 +19,6 @@ const TrackCard = ({track, play}) => (
       </div>
       <div className="extra content">
         <span className="right floated">
-          Joined in 2013
         </span>
         <button 
           className="ui basic icon button"

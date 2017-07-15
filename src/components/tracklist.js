@@ -7,6 +7,7 @@ import { createSelector } from 'reselect';
 //import { getTrackById } from '../core/tracks'
 import { getTracksForCurrentTracklist, getCurrentTracklist, getTracklistLoaded } from '../core/tracklists'
 import TrackCard from './trackCard'
+import Spinner from './spinner'
 import { playerActions } from '../core/player'
 
 
@@ -30,7 +31,7 @@ class Tracklist extends Component {
 		const { tracklist, tracks, isLoaded, playTrack } = this.props
 		return (
 			<div>
-				{isLoaded ? <List tracks={tracks} playTrack={playTrack} tracklistId={tracklist.id} /> : <h3>loading</h3>}	
+				{isLoaded ? <List tracks={tracks} playTrack={playTrack} tracklistId={tracklist.id} /> : <Spinner />}	
 			</div>
 		)
 	}
