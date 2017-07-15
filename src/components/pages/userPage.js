@@ -11,6 +11,14 @@ import UserCard from '../userCard'
 import { getTracklistStatus, getCurrentTracklist } from '../../core/tracklists'
 
 class UserPage extends Component {
+	constructor() {
+		super()
+		this.state = {
+			tracksLoaded: false,
+			favoritesLoaded: false
+		}
+	}
+
 	componentDidMount() {
   	if (this.scrolled === false){
     	window.scrollTo(0,0);
@@ -26,10 +34,15 @@ class UserPage extends Component {
 	}
 
 	componentWillUpdate(nextProps) {
-		console.log('currentTracklist', this.props.currentTracklist.id)
 		if (nextProps.match.params !== this.props.match.params) {
+			console.log('favoritesLoaded', this.state.favoritesLoaded)
+			console.log('tracksLoaded', this.state.tracksLoaded)
 			this.loadCurrentUser(nextProps.match.params)
-			this.props.fetchUserTracks(nextProps.match.params.id, nextProps.match.params.section)
+			if (this.state.tracksLoaded !== this.state.favoritesLoaded) {
+				this.props.fetchUserTracks(nextProps.match.params.id, nextProps.match.params.section)
+			} else {
+				this.props.reloadPlaylist(`users/${nextProps.match.params.id}/${nextProps.match.params.section}`)
+			}
 		}
 	}
 
@@ -38,8 +51,10 @@ class UserPage extends Component {
 		this.props.loadUser(params.id)
 		if (params.section === 'favorites') {
 			this.props.loadUserFavorites(params.id)
+			this.setState({ favoritesLoaded: true })
 		} else {
 			this.props.loadUserTracks(params.id)
+			this.setState({ tracksLoaded: true })
 		}
 	}
 

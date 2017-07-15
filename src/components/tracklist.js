@@ -29,6 +29,7 @@ function List({ tracks, playTrack, tracklistId }) {
 class Tracklist extends Component {
 	render() {
 		const { tracklist, tracks, isLoaded, playTrack } = this.props
+		console.log('isLoaded', isLoaded)
 		return (
 			<div>
 				{isLoaded ? <List tracks={tracks} playTrack={playTrack} tracklistId={tracklist.id} /> : <Spinner />}	
