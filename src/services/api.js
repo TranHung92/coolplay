@@ -15,10 +15,6 @@ export function apiUrl(url, symbol) {
   return `//api.soundcloud.com/${url}${symbol}oauth_token=${accessToken}`;
 }
 
-export function addTempClientIdWith(url, symbol) {
-  return `${url}${symbol}client_id=${TEMP_CLIENT_ID}`;
-}
-
 export function addAccessTokenWith(url, symbol) {
   const accessToken = Cookies.get('accessToken');
   if (accessToken) {
@@ -37,14 +33,6 @@ export function getLazyLoadingUsersUrl(user, nextHref, initHref) {
     return addAccessTokenWith(nextHref, '&');
   } else {
     return apiUrl(`${getUrlPrefix(user)}/${initHref}`, '&');
-  }
-}
-
-export function getLazyLoadingCommentsUrl(nextHref, initHref) {
-  if (nextHref) {
-    return addAccessTokenWith(nextHref, '&');
-  } else {
-    return apiUrl(initHref, '&');
   }
 }
 

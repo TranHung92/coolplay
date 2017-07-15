@@ -26,14 +26,14 @@ export default function UserCard({user}) {
 		return (
 			<div className="ui very padded vertical segment">
 				<div className="ui container">
-					<h3>Featured Tracks</h3>
+					<h1>Featured Tracks</h1>
 				</div>
 			</div>
 		)
 	}
 
 	return (
-		<div>
+		<div className="userCard">
 			{ user ? <RenderUserCard user={user} /> : <RenderHomeCard /> }
 		</div>
 	)

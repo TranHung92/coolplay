@@ -1,16 +1,18 @@
 .header.menu {
-	z-index: 1;
-	background-color: black;
-
+  position:fixed;
+  width:100%;
+  top:0px;
+  z-index: 1;
 }
 
 .description {
 	height: 38px;
 }
 
-.footer {
-	background-color: green!important;
+.userCard {
+	margin-top: 80px;
 }
+
 
 /*footer*/
 .bs-scrolling-header{
@@ -21,7 +23,6 @@
   transition:  all .3s ease-in-out;
   bottom:0px;
   z-index: 1;
- 
 }
 
 .small{

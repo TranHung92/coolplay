@@ -7,32 +7,22 @@ import * as actionTypes from '../../_constants/actionTypes'
 
 export function fetchFeaturedTracks(tracklistId) {
 	return dispatch => {
-		axios.get('https://api.soundcloud.com/users/134910968/favorites?client_id=a281614d7f34dc30b665dfcaa3ed7505&')
-			.then(res => {
-				dispatch({
-					type: actionTypes.LOAD_FEATURED_TRACKS,
-					payload: {
-						tracklistId: FEATURED_TRACKLIST_ID
-					}
-				})
-				dispatch({
-					type: actionTypes.FETCH_TRACKS_FULFILLED,
-					payload: { ...res, tracklistId }
-				})		
+		fetch('https://api.soundcloud.com/users/134910968/favorites?client_id=a281614d7f34dc30b665dfcaa3ed7505&')
+			.then(res => res.json())
+			.then(data => {
+				dispatch(loadFeaturedTracks())
+				dispatch(fetchTracks(tracklistId, { data }))		
 			})
 	}
 }
+
 
 export function fetchUserTracks(userId, section) {
 	const tracklistId = `users/${userId}/${section}`
 	return dispatch => {
 		axios.get(`https://api.soundcloud.com/users/${userId}/${section}?client_id=a281614d7f34dc30b665dfcaa3ed7505&`)
 			.then(res => {
-				dispatch({
-					type: actionTypes.FETCH_TRACKS_FULFILLED,
-					payload: { ...res, tracklistId}
-				})
-				//dispatch(loadUserTracks(userId, section))
+				dispatch(fetchTracks(tracklistId, res))
 			})
 	}
 }
@@ -58,10 +48,18 @@ function loadUserTracks(userId, section) {
 	}
 }
 
-export function fetchTracks(data) {
+export function fetchTracks(tracklistId, data) {
 	return {
 		type: actionTypes.FETCH_TRACKS_FULFILLED,
-		payload: data
+		payload: { ...data, tracklistId }
+	}
+}
+
+export function fetchTracks2(data) {
+	console.log("dataaa", data[17092364])
+	return {
+		type: null,
+		payload: null
 	}
 }
 

@@ -53,6 +53,11 @@ export const getCurrentTrackIds = createSelector(
   tracklist => tracklist.trackIds
 );
 
+export const getTracklistStatus = createSelector(
+  getCurrentTracklist,
+  tracklist => tracklist.isLoaded
+)
+
 export const getTracksForCurrentTracklist = createSelector(
   getCurrentTrackIds,
   getTracks,

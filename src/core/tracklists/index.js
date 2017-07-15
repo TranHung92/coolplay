@@ -6,11 +6,15 @@ export {
   getTracklistCursor,
   getTracksForCurrentTracklist,
   getCurrentTrackIds,
+  getTracklistStatus,
   getTracklistLoaded
 } from './selectors';
 
 export {
 	fetchFeaturedTracks,
+	loadFeaturedTracks,
 	fetchFavorites,
-	fetchUserTracks
+	fetchUserTracks,
+	fetchTracks,
+	fetchTracks2
 } from './actions'

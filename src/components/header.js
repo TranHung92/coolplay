@@ -41,7 +41,7 @@ function SessionAction({ currentUser, onLogin, onLogout }) {
 
 function Header({ user, onLogin, onLogout }) {
 	return (
-		<div>
+		<div className="header menu">
 			<SessionAction currentUser={user} onLogin={onLogin} onLogout={onLogout} />
 		</div>
 		

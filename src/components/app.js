@@ -17,40 +17,16 @@ export default class App extends Component {
 	render() {
 		return (
 			<div>
-			<StickyContainer>
-				<div>
-					<Sticky>
-						{
-	            ({
-	              style,
-	              isSticky,
-	              wasSticky,
-	              distanceFromTop,
-	              distanceFromBottom,
-	              calculatedHeight
-	            }) => {
-	              return (
-	                <div className="header menu" style={style}>
-	                	<div>
-											<Header  />
-	                	</div>
-	                </div>
-	              )
-	            }
-          	}
-					</Sticky>
-					<Footer />
-					<Switch>
-						<Route exact path='/' component={HomePage} />
-						<Route exact path={likePage} component={LikePage} />
-						<Route exact path='/users/:id/:section' component={UserPage} />
-						<Route exact path={callback} component={Callback} />
-						<Redirect to='/' />	
-					</Switch>
-				</div>				
-			</StickyContainer>				
+				<Header className="header" />
+				<Switch>
+					<Route exact path='/' component={HomePage} />
+					<Route exact path={likePage} component={LikePage} />
+					<Route exact path='/users/:id/:section' component={UserPage} />
+					<Route exact path={callback} component={Callback} />
+					<Redirect to='/' />	
+				</Switch>
+				<Footer />				
 			</div>
-
 
 		)
 	}
