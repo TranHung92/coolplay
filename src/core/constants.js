@@ -1,8 +1,7 @@
 //=========================================================
 //  CONSTANTS
 //---------------------------------------------------------
-export const APP_NAME = 'soundcloud-redux';
-
+export const APP_NAME = 'my-sc'
 
 //=====================================
 //  API
@@ -17,13 +16,11 @@ export const CLIENT_ID_PARAM = `client_id=${CLIENT_ID}`;
 export const PAGINATION_LIMIT = 60;
 export const PAGINATION_PARAMS = `limit=${PAGINATION_LIMIT}&linked_partitioning=1`;
 
-
 //=====================================
 //  IMAGES
 //-------------------------------------
 export const IMAGE_DEFAULT_SIZE = 'large.jpg';
 export const IMAGE_XLARGE_SIZE = 't500x500.jpg';
-
 
 //=====================================
 //  PLAYER

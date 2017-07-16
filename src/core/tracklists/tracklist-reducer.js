@@ -1,5 +1,5 @@
 import { List } from 'immutable'
-import * as actionTypes from '../../_constants/actionTypes'
+import * as actionTypes from '../../constants/actionTypes'
 import { Tracklist } from './tracklist'
 
 export function tracklistReducer(state = new Tracklist(), { type, payload }) {

@@ -1,6 +1,6 @@
 import { Map } from 'immutable'
 
-import * as actions from '../../_constants/actionTypes';
+import * as actions from '../../constants/actionTypes';
 
 const initialState = new Map({
 	session: null,

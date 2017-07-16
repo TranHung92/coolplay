@@ -1,5 +1,5 @@
 import { Record } from 'immutable'
-import * as actionTypes from '../../_constants/actionTypes'
+import * as actionTypes from '../../constants/actionTypes'
 
 const PlayerState = new Record({
 	isPlaying: false,

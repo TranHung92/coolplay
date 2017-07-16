@@ -1,4 +1,4 @@
-import * as actionTypes from '../../_constants/actionTypes'
+import * as actionTypes from '../../constants/actionTypes'
 
 //import { getPlayerTrack, getPlayerTracklistCursor } from './selectors';
 import { audio } from './audio-service';

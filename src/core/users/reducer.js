@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import * as actionTypes from '../../_constants/actionTypes';
+import * as actionTypes from '../../constants/actionTypes';
 import { createUser } from './user';
 
 

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import { FEATURED_TRACKLIST_ID } from '../constants';
-import * as actionTypes from '../../_constants/actionTypes'
+import * as actionTypes from '../../constants/actionTypes'
 
 
 

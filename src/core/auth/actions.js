@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 //import axios from 'axios'
 
 import { CLIENT_ID, REDIRECT_URI, OAUTH_TOKEN } from '../../constants/auth';
-import * as actions from '../../_constants/actionTypes';
+import * as actions from '../../constants/actionTypes';
 import { apiUrl } from '../../services/api';
 
 export const login = () => (dispatch) => {

@@ -1,4 +1,4 @@
-import * as actionTypes from '../../_constants/actionTypes'
+import * as actionTypes from '../../constants/actionTypes'
 import { tracklistIdForUserFavorites, tracklistIdForUserTracks } from './utils';
 
 export const userActions = {
