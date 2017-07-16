@@ -142,3 +142,11 @@
 .ui.header>.image:not(.icon), .ui.header>img {
   width: 200px;
 }
+
+.ui.centered.card {
+  margin-bottom: 20px;
+}
+
+.tracklist {
+  margin-bottom: 100px
+}

@@ -31,7 +31,7 @@ class Tracklist extends Component {
 		const { tracklist, tracks, isLoaded, playTrack } = this.props
 		console.log('isLoaded', isLoaded)
 		return (
-			<div>
+			<div className="tracklist">
 				{isLoaded ? <List tracks={tracks} playTrack={playTrack} tracklistId={tracklist.id} /> : <Spinner />}	
 			</div>
 		)
