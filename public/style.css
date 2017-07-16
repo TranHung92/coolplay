@@ -18,7 +18,7 @@
 .bs-scrolling-header{
   position:fixed;
   background: orange ;
-  height:100px;
+  height:80px;
   width:100%;
   transition:  all .3s ease-in-out;
   bottom:0px;
@@ -132,4 +132,13 @@
 .ui.secondary.pointing.menu .active.item:hover {
 	color: #f2711c;
 	border-color: #f2711c;
+}
+
+.ui.secondary.pointing.menu .active.item {
+  color: #f2711c;
+  border-color: #f2711c;
+}
+
+.ui.header>.image:not(.icon), .ui.header>img {
+  width: 200px;
 }

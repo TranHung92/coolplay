@@ -1,4 +1,5 @@
 import { Record } from 'immutable';
+import { trackUserUrl } from './utils';
 
 
 export const User = new Record({
@@ -20,7 +21,7 @@ export const User = new Record({
 
 export function createUser(data, profile = false) {
   let attrs = {
-    avatarUrl: data.avatar_url,
+    avatarUrl: trackUserUrl(data),
     id: data.id,
     permalinkUrl: data.permalink_url,
     username: data.username,
