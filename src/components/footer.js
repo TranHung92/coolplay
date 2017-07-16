@@ -30,7 +30,7 @@ export default class Footer extends Component {
   render() {
     return (
       <div className={`bs-scrolling-header ${this.state.isMin ? 'small' : ''}`}>
-        <h3>My Footer!! </h3>
+        <h3>Music Player</h3>
       </div>
     );
   }
