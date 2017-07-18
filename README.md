@@ -1,5 +1,5 @@
 # coolplay
-A mini Soundcloud client app 
+A mini Soundcloud client app [demo](https://coolplay.herokuapp.com/)
 
 # Tech
   - React
