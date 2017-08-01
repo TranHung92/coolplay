@@ -1,7 +1,7 @@
 import {
   IMAGE_DEFAULT_SIZE,
   IMAGE_XLARGE_SIZE,
-} from '../constants';
+} from '../../constants/api';
 
 export function tracklistIdForUserFavorites(userId) {
   return `users/${userId}/favorites`;

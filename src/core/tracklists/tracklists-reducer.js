@@ -1,6 +1,6 @@
 import { Map } from 'immutable'
 import * as actionTypes from '../../constants/actionTypes'
-import { SESSION_TRACKLIST_ID } from '../constants'
+import { SESSION_TRACKLIST_ID } from '../../constants/api'
 import { tracklistReducer } from './tracklist-reducer'
 import { Tracklist } from './tracklist'
 

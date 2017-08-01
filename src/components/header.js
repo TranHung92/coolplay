@@ -30,10 +30,7 @@ function SessionAction({ currentUser, onLogin, onLogout }) {
 			<div className="ui container">
 				<div className="item">
 					<Link to='/'>CoolPlay</Link>
-				</div>
-				<div className="right menu item">
-					{ currentUser ? <Logout onLogout={onLogout} /> : <Login onLogin={onLogin} />}
-				</div>				
+				</div>			
 			</div>
 		</div>
 	)

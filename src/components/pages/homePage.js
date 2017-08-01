@@ -9,7 +9,7 @@ import UserCard from '../userCard'
 import { getTracklistStatus, getTracksForCurrentTracklist, getCurrentTracklist } from '../../core/tracklists'
 import Spinner from '../spinner'
 
-import { FEATURED_TRACKLIST_ID } from '../../core/constants'
+import { FEATURED_TRACKLIST_ID } from '../../constants/api'
 
 
 class HomePage extends Component {

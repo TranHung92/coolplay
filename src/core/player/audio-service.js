@@ -1,4 +1,4 @@
-import { PLAYER_MAX_VOLUME, PLAYER_VOLUME_INCREMENT } from '../constants';
+import { PLAYER_MAX_VOLUME, PLAYER_VOLUME_INCREMENT } from '../../constants/api';
 //import { playerActions } from './actions';
 
 

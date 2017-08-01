@@ -2,9 +2,7 @@ import {
   CLIENT_ID_PARAM,
   IMAGE_DEFAULT_SIZE,
   IMAGE_XLARGE_SIZE,
-  WAVEFORM_IMAGE_HOST,
-  WAVEFORM_JSON_HOST
-} from '../constants';
+} from '../../constants/api';
 
 
 const EN_DASH = String.fromCharCode(8211);
@@ -22,11 +20,4 @@ export function streamUrl(url) {
 export function trackImageUrl(trackData, size = IMAGE_XLARGE_SIZE) {
   let url = trackData.artwork_url || trackData.user.avatar_url;
   return url.replace(IMAGE_DEFAULT_SIZE, size);
-}
-
-export function waveformUrl(url) {
-  if (url.includes('.json')) return url;
-  return url
-    .replace(WAVEFORM_IMAGE_HOST, WAVEFORM_JSON_HOST)
-    .replace('.png', '.json');
 }

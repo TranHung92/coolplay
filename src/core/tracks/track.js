@@ -1,5 +1,5 @@
 import { Record } from 'immutable';
-import { formatTrackTitle, streamUrl, trackImageUrl, waveformUrl } from './utils';
+import { formatTrackTitle, streamUrl, trackImageUrl } from './utils';
 
 
 export const Track = new Record({
@@ -16,7 +16,6 @@ export const Track = new Record({
   userId: null,
   username: null,
   userPermalinkUrl: null,
-  waveformUrl: null
 });
 
 
@@ -35,6 +34,5 @@ export function createTrack(data) {
     userId: data.user.id,
     username: data.user.username,
     userPermalinkUrl: data.user.permalink_url,
-    waveformUrl: waveformUrl(data.waveform_url)
   });
 }
